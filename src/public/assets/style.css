@@ -1,0 +1,146 @@
+@import "../../../node_modules/bulma/css/bulma.css";
+
+body {
+	user-select: none;
+	height: 100%;
+	border-collapse: collapse;
+}
+
+::-webkit-scrollbar {
+	display: none;
+}
+
+::selection {
+	color: white;
+	background: hsl(171, 100%, 41%);
+}
+
+#controls {
+	position: sticky;
+	top: 0.5rem;
+	width: 100%;
+}
+
+#nav {
+	position: sticky;
+	bottom: 0.5rem;
+}
+
+#controls,
+#nav {
+	z-index: 100;
+	background: rgba(255, 255, 255, 0.2);
+	border-radius: 16px;
+	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+	backdrop-filter: blur(5px);
+	-webkit-backdrop-filter: blur(5px);
+	border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.download-rejection {
+	animation-name: rejection;
+	animation-duration: 500ms;
+}
+
+@keyframes rejection {
+	0% {
+		border: 1px solid hsl(348, 100%, 61%);
+		transform: translateX(-4px);
+	}
+	25% {
+		border: 1px solid hsl(348, 100%, 61%);
+		transform: translateX(4px);
+	}
+	50% {
+		border: 1px solid hsl(348, 100%, 61%);
+		transform: translateX(-2px);
+	}
+	75% {
+		border: 1px solid hsl(348, 100%, 61%);
+		transform: translateX(1px);
+	}
+	100% {
+		border: 1px solid hsl(171, 100%, 41%);
+		transform: translateX(0px);
+	}
+}
+
+.dark {
+	background-color: hsl(0, 0%, 21%);
+}
+
+.dark.panel-block:not(:last-child) {
+	border-bottom: 1px solid hsl(0, 0%, 26%) !important;
+}
+
+.card-footer {
+	border-top: none !important;
+}
+
+.dark-right-border {
+	border-right: 1px solid hsl(0, 0%, 26%) !important;
+}
+
+.dark-control-nav {
+	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05) !important;
+	border: 1px solid rgba(255, 255, 255, 0.02) !important;
+	background: rgba(255, 255, 255, 0.04) !important;
+}
+
+.dark-background {
+	background-color: hsl(171, 20%, 21%) !important;
+}
+
+#fileListHolder .panel-block.dark:hover {
+	background-color: hsl(0, 0%, 26%);
+}
+
+.dark-panel {
+	box-shadow: 0 4px 30px rgba(201, 201, 201, 0.1) !important;
+}
+
+.dark-downloadField {
+	background-color: hsl(0, 0%, 21%) !important;
+}
+
+.card-footer-item,
+#downloadField::placeholder,
+#downloadField,
+a {
+	color: hsl(171, 100%, 41%) !important;
+}
+
+sup {
+	font-size: small !important;
+}
+
+.slider {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 100%;
+	height: 1rem;
+	background: rgba(0, 0, 0, 0);
+	outline: none;
+	-webkit-transition: 0.3s;
+	transition: opacity 0.3s;
+	border-radius: 0.2rem;
+	border: 1px solid hsla(0, 0%, 50%, 0.45);
+}
+
+.slider::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 0.7rem;
+	height: 0.7rem;
+	background: hsl(171, 100%, 47%);
+	cursor: pointer;
+	border-radius: 0.2rem;
+}
+
+.dark.blocked {
+	color: hsl(0, 0%, 36%) !important;
+}
+
+.blocked {
+	color: hsl(0, 0%, 80%) !important;
+}
